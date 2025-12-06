@@ -1,0 +1,24 @@
+---
+puppetlabs-puppetdb: https://github.com/puppetlabs/puppetlabs-puppetdb.git
+saz-sudo: https://github.com/saz/puppet-sudo
+puppetlabs-stdlib: https://github.com/puppetlabs/puppetlabs-stdlib
+puppet-archive: https://github.com/voxpupuli/puppet-archive
+puppetlabs-concat: https://github.com/puppetlabs/puppetlabs-concat
+puppetlabs-ntp: https://github.com/puppetlabs/puppetlabs-ntp
+elastic-elastic_stack: https://github.com/elastic/puppet-elastic-stack
+puppet-yum: https://github.com/voxpupuli/puppet-yum.git
+tracywebtech-pip: https://github.com/TracyWebTech/puppet-pip
+puppet-collectd: https://github.com/voxpupuli/puppet-collectd
+threatstack-threatstack: https://github.com/threatstack/threatstack-puppet
+rmueller-cron: https://github.com/roman-mueller/rmueller-cron
+camptocamp-archive: https://github.com/camptocamp/puppet-archive
+puppet-nginx: https://github.com/voxpupuli/puppet-nginx.git
+Slashbunny-phpfpm: https://github.com/Slashbunny/puppet-phpfpm
+pdxcat-nrpe: https://github.com/pdxcat/puppet-module-nrpe
+stahnma-epel: https://github.com/stahnma/puppet-module-epel
+puppetlabs-docker: https://github.com/puppetlabs/puppetlabs-docker
+puppetlabs-apt: https://github.com/puppetlabs/puppetlabs-apt
+garethr-docker: https://github.com/garethr/garethr-docker.git
+puppetlabs-stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
+puppetlabs-apache: https://github.com/puppetlabs/puppetlabs-apache.git
+binford2k-itemize: https://github.com/binford2k/binford2k-itemize.git

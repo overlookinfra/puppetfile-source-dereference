@@ -1,0 +1,31 @@
+#! /usr/bin/env ruby
+
+require 'puppetfile-source-dereference'
+require 'puppetfile-source-dereference/version'
+require 'optparse'
+
+options = {
+  :source  => 'Puppetfile',
+  :output  => 'Puppetfile.out',
+  :dryrun  => false,
+  :mapping => 'https://raw.githubusercontent.com/overlookinfra/puppetfile-source-dereference/refs/heads/main/data/cache.yaml'
+}
+OptionParser.new do |opts|
+  Version     = PuppetfileSourceDereference::VERSION
+  opts.banner = "Usage: puppetfile-source-dereference [options]"
+
+  opts.on("-s", "--source [FILE]", "Pass the name of a source file (Puppetfile)") do |v|
+    options[:source] = v
+  end
+  opts.on("-o", "--output [FILE]", "Pass the name of an output file (Puppetfile.out)") do |v|
+    options[:output] = v
+  end
+  opts.on("-d", "--[no-]dry-run", "Print output to the terminal instead of a file") do |v|
+    options[:dryrun] = v
+  end
+  opts.on("-m", "--mapping_uri [URI]", "The file or URI with cached Forge module mappings") do |v|
+    options[:mapping] = v
+  end
+end.parse!
+
+PuppetfileSourceDereference.new(options).resolve
