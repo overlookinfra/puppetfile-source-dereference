@@ -4,7 +4,7 @@ on:
   schedule:
   - cron:  '0 2 * * 4'
 jobs:
-  dashboards:
+  mappings-update:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
