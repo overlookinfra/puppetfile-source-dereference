@@ -28,6 +28,8 @@ class PuppetfileSourceDereference
 
     File.open(@output, 'w') do |output|
       puppetfile.modules.each do |mod|
+        mod.title = mod.title.sub('/', '-') # normalize names
+
         if mod.module_type == :git
           output.write <<~EOF
             mod '#{mod.title}',
@@ -50,7 +52,7 @@ class PuppetfileSourceDereference
             EOF
           end
         else
-          output.write "mod '#{mod.title}', #{version}  # unmapped entry!\n"
+          output.write "mod '#{mod.title}', #{mod.version.inspect}  # unmapped entry!\n"
         end
       end
     end
