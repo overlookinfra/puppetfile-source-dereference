@@ -3,6 +3,7 @@ require "puppetfile-resolver"
 require "puppetfile-resolver/puppetfile/parser/r10k_eval"
 require 'puppet_forge'
 require 'yaml'
+require 'open-uri'
 
 class PuppetfileSourceDereference
   attr_accessor :source, :output, :dryrun, :mapping
@@ -17,7 +18,7 @@ class PuppetfileSourceDereference
 
   def resolve
     puppetfile = PuppetfileResolver::Puppetfile::Parser::R10KEval.parse(File.read(@source))
-    mapping    = YAML.load(open(@mapping).read)
+    mapping    = YAML.load(URI.open(@mapping).read)
 
     unless puppetfile.valid?
       logger.error("Puppetfile source is not valid")
@@ -40,7 +41,7 @@ class PuppetfileSourceDereference
             output.write <<~EOF
               mod '#{mod.title}',
                 :git => '#{source}',
-                :ref => '#{mod.version.delete_prefix('=')}'
+                :ref => '#{mod.version.delete_prefix('=')}'  # check the source repo and fix this ref
             EOF
           else
             output.write <<~EOF
@@ -49,7 +50,7 @@ class PuppetfileSourceDereference
             EOF
           end
         else
-          output.write "mod '#{mod.title}', #{version}\n"
+          output.write "mod '#{mod.title}', #{version}  # unmapped entry!\n"
         end
       end
     end
