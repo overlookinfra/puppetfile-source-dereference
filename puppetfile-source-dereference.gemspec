@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.files            += Dir.glob("lib/**/*")
   s.files            += Dir.glob("bin/**/*")
   s.add_dependency      'puppetfile-resolver', '~> 0.5.0'
+  s.add_dependency      'puppet_forge', '>= 3.0.0'
 
   s.description       = <<-desc
     This will replace all Forge entries in a Puppetfile with git sources if the
