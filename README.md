@@ -3,7 +3,7 @@
 This is a simple tool to replace forge references with the git source in a Puppetfile.
 The intent is to reduce your dependency on the Puppet Forge in cases of service interruptions.
 
-The simplest use case is to simply run the tool in the root directory of a Puppet module.
+The simplest use case is to simply run the tool in the root directory of a Puppet control repo.
 It will generate a `Puppetfile.out`, which you will need to inspect and clean up.
 
 Comments and formatting will not be preserved, you'll need to reconcile that.
